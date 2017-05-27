@@ -20,6 +20,7 @@ public class StepdefsDetailsPage {
     private static WebDriver driver;
 
     static {
+        baseUrl = System.getProperty("url", "");
         Logger.getLogger("").setLevel(Level.OFF);
         System.setProperty("webdriver.gecko.driver", "drivers\\geckodriver.exe");
         System.setProperty("webdriver.edge.driver", "drivers\\MicrosoftWebDriver.exe");

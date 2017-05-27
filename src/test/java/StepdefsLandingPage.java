@@ -23,8 +23,10 @@ public class StepdefsLandingPage {
     private static WebDriver driver;
     private static WebDriverWait wait;
     private static String url;
+    private static String baseUrl;
 
     static {
+        baseUrl = System.getProperty("url", "");
         Logger.getLogger("").setLevel(Level.OFF);
         System.setProperty("webdriver.gecko.driver", "drivers\\geckodriver.exe");
         System.setProperty("webdriver.edge.driver", "drivers\\MicrosoftWebDriver.exe");
@@ -40,7 +42,7 @@ public class StepdefsLandingPage {
 
     @Given("^that i'm on the landing page$")
     public void thatIMOnTheLandingPage() throws Throwable {
-        driver.get("http://loshermanos-profilecards-los-hermanos.7e14.starter-us-west-2.openshiftapps.com/");
+        driver.get(baseUrl);
     }
 
     @When("^the page finishes loading$")
